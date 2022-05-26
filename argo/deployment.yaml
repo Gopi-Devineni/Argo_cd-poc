@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: myapp-deployment
+  namespace: argocd
 spec: 
   selector:
     matchLabels:
@@ -11,7 +12,7 @@ spec:
     metadata:
       labels:
         app: myapp
-    spce: 
+    spec: 
       containers:
       - name: myapp
         image: nginx
