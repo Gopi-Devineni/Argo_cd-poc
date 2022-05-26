@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/Gopi-Devineni/Argo_cd-poc.git
+    targetRevision: HEAD
+    path: argo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+    
+  syncPolicy:
+    syncOptions:      
+    -  CreateNmaespace=true
+
+    automated: 
+      selfHeal: true
+      prune: true
+      
+piVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/Gopi-Devineni/Argo_cd-poc.git
+    targetRevision: HEAD
+    path: argo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+    
+  syncPolicy:
+    syncOptions:      
+    -  CreateNmaespace=true
+
+    automated: 
+      selfHeal: true
+      prune: true
+      
